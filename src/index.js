@@ -8,6 +8,7 @@ import { createBrowserRouter, RouterProvider, HashRouter } from 'react-router-do
 
 import Home from './routes/Home';
 import About from './routes/About';
+import ErrorPage from './routes/ErrorPage';
 
 // const router = createBrowserRouter([
 //   {
@@ -21,16 +22,17 @@ import About from './routes/About';
 // ])
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App/>,
+    path: "/starter-project-outlet",
+    element: <App />,
+    errorElement: <ErrorPage/>,
     children: [
       {
-        path: "/",
-        element: <Home/>
+        path: "/starter-project-outlet",
+        element: <Home />
       },
       {
-        path: "/about",
-        element: <About/>
+        path: "/starter-project-outlet/about",
+        element: <About />
       }
     ]
   },
@@ -40,8 +42,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     
-      <RouterProvider router={router}/>
-   
+      <RouterProvider router={router} />
+    
   </React.StrictMode>
 );
 
