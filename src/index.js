@@ -9,6 +9,8 @@ import { createBrowserRouter, RouterProvider, HashRouter } from 'react-router-do
 import Home from './routes/Home';
 import About from './routes/About';
 import ErrorPage from './routes/ErrorPage';
+import GetPokemons from './routes/GetPokemons';
+import PokemonDetails from './routes/PokemonDetails'
 
 // const router = createBrowserRouter([
 //   {
@@ -33,7 +35,15 @@ const router = createBrowserRouter([
       {
         path: "/starter-project-outlet/about",
         element: <About />
-      }
+      },
+      {
+        path: "/starter-project-outlet/pokemons",
+        element: <GetPokemons />
+      },
+      {
+        path: "/starter-project-outlet/pokemons/:id",
+        element: <PokemonDetails />
+      },
     ]
   },
 ])

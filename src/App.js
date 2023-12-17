@@ -5,14 +5,18 @@ import React from 'react';
 // import About from './routes/About';
 
 import { Outlet } from 'react-router-dom';
+import { ThemeProvider } from './contexts/themeContext';
+import {ThemeTogglerButton} from './theme-toggler-button/theme-toggler-button'
 
 function App() {
   return (
-    <div>
-      <h1>React Router com Outlet</h1>
-      <Outlet/>
-      <h2>rodapé</h2>
-      {/* <nav>
+    <ThemeProvider>
+      <div>
+        <h1>React Router com Outlet</h1>
+        <button><ThemeTogglerButton /></button>
+        <Outlet />
+        <h2>rodapé</h2>
+        {/* <nav>
         <ul id="navigation">
           <li>
             <Link to="/">Home</Link>
@@ -28,7 +32,8 @@ function App() {
         <Route path='/about' element={<About />} />
       </Routes> */}
 
-    </div>
+      </div>
+    </ThemeProvider>
   );
 }
 
