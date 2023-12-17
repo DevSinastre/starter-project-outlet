@@ -1,13 +1,18 @@
 import './App.css';
-import { Link, Route, Routes } from 'react-router-dom';
+// import { Link, Route, Routes } from 'react-router-dom';
 import React from 'react';
-import Home from './routes/Home';
-import About from './routes/About';
+// import Home from './routes/Home';
+// import About from './routes/About';
+
+import { Outlet } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <nav>
+      <h1>React Router com Outlet</h1>
+      <Outlet/>
+      <h2>rodapé</h2>
+      {/* <nav>
         <ul id="navigation">
           <li>
             <Link to="/">Home</Link>
@@ -21,7 +26,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About />} />
-      </Routes>
+      </Routes> */}
 
     </div>
   );
