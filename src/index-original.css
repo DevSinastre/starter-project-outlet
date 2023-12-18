@@ -5,28 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-size: cover;
-  background-attachment: fixed;
-  justify-content: space-between;
-  background-color: yellow;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-*{
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  box-sizing: border-box;
-  text-decoration: none;
-  text-transform: capitalize;
-}
-
-#root{
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
 }

@@ -26,9 +26,7 @@ const Pokemons = (props) => {
 
                             <Li key={index}>
                                 <Link to={'/starter-project-outlet/pokemons/' + pokemon.id}>
-                                    <Div 
-                                    // style={{ color: theme.color, backgroundColor: theme.backgroundColor, transition: theme.transition }}
-                                    >
+                                    <Div style={{ color: theme.color, backgroundColor: theme.backgroundColor, transition: theme.transition }}>
                                         <p>{pokemon.name}</p>
                                         <Img src={pokemon.sprites.front_default} alt={'Imagem do Pokemon: ' + pokemon.name}></Img>
                                     </Div>
@@ -87,14 +85,14 @@ const GetPokemon = () => {
 
     return (
         <Section
-        //  style={{ color: theme.color, backgroundColor: theme.background, transition: theme.transition  }}
-         >
+        style={{ color: theme.color, backgroundColor: theme.background, transition: theme.transition  }}
+        >
             <Pokemons pokemons={pokemonList.pokemon} />
             <Button onClick={() => {
-                if(count <= 1282){
+                if (count <= 1282) {
                     setCount(count + 10)
                 }
-                else{
+                else {
                     setCount(1292)
                 }
             }}>Load more</Button>
