@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/starter-project-outlet/pokemons/static/css/main.478dafa7.css",
-    "main.js": "/starter-project-outlet/pokemons/static/js/main.c6fb833f.js",
-    "static/js/787.59b5c66d.chunk.js": "/starter-project-outlet/pokemons/static/js/787.59b5c66d.chunk.js",
-    "static/media/International_Pokemon_logo.png": "/starter-project-outlet/pokemons/static/media/International_Pokemon_logo.d777aa7af9c7c709dd41.png",
-    "static/media/basic-card-background4.png": "/starter-project-outlet/pokemons/static/media/basic-card-background4.ecb3d2c161dd4ea326eb.png",
-    "static/media/logo.svg": "/starter-project-outlet/pokemons/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/starter-project-outlet/pokemons/index.html",
-    "main.478dafa7.css.map": "/starter-project-outlet/pokemons/static/css/main.478dafa7.css.map",
-    "main.c6fb833f.js.map": "/starter-project-outlet/pokemons/static/js/main.c6fb833f.js.map",
-    "787.59b5c66d.chunk.js.map": "/starter-project-outlet/pokemons/static/js/787.59b5c66d.chunk.js.map"
+    "main.css": "/starter-project-outlet/static/css/main.478dafa7.css",
+    "main.js": "/starter-project-outlet/static/js/main.de6c26c9.js",
+    "static/js/787.59b5c66d.chunk.js": "/starter-project-outlet/static/js/787.59b5c66d.chunk.js",
+    "static/media/International_Pokemon_logo.png": "/starter-project-outlet/static/media/International_Pokemon_logo.d777aa7af9c7c709dd41.png",
+    "static/media/basic-card-background4.png": "/starter-project-outlet/static/media/basic-card-background4.ecb3d2c161dd4ea326eb.png",
+    "static/media/logo.svg": "/starter-project-outlet/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/starter-project-outlet/index.html",
+    "main.478dafa7.css.map": "/starter-project-outlet/static/css/main.478dafa7.css.map",
+    "main.de6c26c9.js.map": "/starter-project-outlet/static/js/main.de6c26c9.js.map",
+    "787.59b5c66d.chunk.js.map": "/starter-project-outlet/static/js/787.59b5c66d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.478dafa7.css",
-    "static/js/main.c6fb833f.js"
+    "static/js/main.de6c26c9.js"
   ]
 }
