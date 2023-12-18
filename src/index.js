@@ -12,16 +12,6 @@ import ErrorPage from './routes/ErrorPage';
 import GetPokemons from './routes/GetPokemons';
 import PokemonDetails from './routes/PokemonDetails'
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home/>
-//   },
-//   {
-//     path: "/about",
-//     element: <About/>
-//   }
-// ])
 const router = createBrowserRouter([
   {
     path: "/starter-project-outlet",
