@@ -6,7 +6,6 @@ import imagem from '../assets/basic-card-background4.png'
 
 import { useContext } from "react";
 import { ThemeContext } from "../contexts/themeContext";
-import { themes } from "../contexts/themeContext";
 
 async function CreatePokemon(id) {
     const createListPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -16,8 +15,6 @@ async function CreatePokemon(id) {
 
 const PokemonDetails = (props) => {
 
-    const { id } = useParams();
-    
     const {theme} = useContext(ThemeContext);
 
     return (

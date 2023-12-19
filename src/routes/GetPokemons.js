@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Link } from "react-router-dom"
 
 import { useContext } from "react"
@@ -9,7 +9,6 @@ async function CreateListPokemon(count) {
     const createListPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${count}.`)
     const createListPokemon2 = await fetch(`https://pokeapi.co/api/v2/pokemon`)
     const response2 = await createListPokemon2.json();
-    console.log(await response2);
     const response = await createListPokemon.json();
     return response.results
 }
