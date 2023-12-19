@@ -16,22 +16,22 @@ const router = createBrowserRouter([
   {
     path: "/starter-project-outlet",
     element: <App />,
-    errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
+      // {
+      //   path: "/starter-project-outlet",
+      //   element: <Home />
+      // },
+      // {
+      //   path: "/starter-project-outlet/about",
+      //   element: <About />
+      // },
       {
-        path: "/starter-project-outlet",
-        element: <Home />
-      },
-      {
-        path: "/starter-project-outlet/about",
-        element: <About />
-      },
-      {
-        path: "/starter-project-outlet/pokemons",
+        path: "/starter-project-outlet/",
         element: <GetPokemons />
       },
       {
-        path: "/starter-project-outlet/pokemons/:id",
+        path: "/starter-project-outlet/:id",
         element: <PokemonDetails />
       },
     ]
@@ -41,9 +41,9 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    
-      <RouterProvider router={router} />
-    
+
+    <RouterProvider router={router} />
+
   </React.StrictMode>
 );
 

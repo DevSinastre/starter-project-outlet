@@ -80,7 +80,7 @@ const Pokemon = () => {
     const navigate = useNavigate();
 
     const handlePokemons = () => {
-        return navigate('/starter-project-outlet/pokemons');
+        return navigate('/starter-project-outlet');
     }
 
     useEffect(() => {

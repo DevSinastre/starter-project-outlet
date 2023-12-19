@@ -9,8 +9,8 @@ const Home = () => {
         <div>
             <header>
                 <img src={logo} className="App-logo" alt="logo" />
-                <Link to="/starter-project-outlet/about">Go to about</Link>
-                <Link to="/starter-project-outlet/pokemons">Go to Pokemons</Link>
+                {/* <Link to="/starter-project-outlet/about">Go to about</Link> */}
+                <Link to="/starter-project-outlet">Go to Pokemons</Link>
             </header>
         </div>
 
