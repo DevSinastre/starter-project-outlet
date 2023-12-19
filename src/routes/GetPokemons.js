@@ -7,8 +7,6 @@ import { ThemeContext } from "../contexts/themeContext"
 
 async function CreateListPokemon(count) {
     const createListPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${count}.`)
-    const createListPokemon2 = await fetch(`https://pokeapi.co/api/v2/pokemon`)
-    const response2 = await createListPokemon2.json();
     const response = await createListPokemon.json();
     return response.results
 }
