@@ -1,15 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import styled from 'styled-components'
 import { Link } from "react-router-dom"
-
-import { useContext } from "react"
 import { ThemeContext } from "../contexts/themeContext"
 
-async function CreateListPokemon(count) {
-    const createListPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${count}.`)
-    const response = await createListPokemon.json();
-    return response.results
-}
+import CreateListPokemon from '../adapters/CreateListPokemon';
 
 const Pokemons = (props) => {
     const { theme } = useContext(ThemeContext);
@@ -37,7 +31,7 @@ const Pokemons = (props) => {
     )
 }
 
-const GetPokemon = () => {
+const GetPokemons = () => {
 
     const { theme } = useContext(ThemeContext)
 
@@ -82,7 +76,7 @@ const GetPokemon = () => {
 
     return (
         <Section
-        style={{ color: theme.color, backgroundColor: theme.background, transition: theme.transition  }}
+            style={{ color: theme.color, backgroundColor: theme.background, transition: theme.transition }}
         >
             <Pokemons pokemons={pokemonList.pokemon} />
             <Button onClick={() => {
@@ -106,6 +100,7 @@ const Section = styled.section`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    border-bottom: 3px solid rgb(255, 255, 91);
 `
 
 const Ul = styled.ul`
@@ -141,10 +136,12 @@ const Button = styled.button`
     width: 200px;
     height: 50px;
     margin: 30px;
+    border-radius: 5px;
+    
 `
 
 const Img = styled.img`
     width: 100%;
 `
 
-export default GetPokemon
+export default GetPokemons

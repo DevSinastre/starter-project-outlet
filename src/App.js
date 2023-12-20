@@ -30,13 +30,13 @@ const Div =  styled.div`
   display: flex;
   position: relative;
   width: 100%;
-  height: 120px;
+  min-height: 120px;
   align-items: center;
   justify-content: center;
+  border-bottom: 2px solid rgb(255, 220, 23);
 `
 
 const Img = styled.img`
-  height: 100px;
   width:300px;
 `
 

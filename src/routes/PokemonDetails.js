@@ -1,17 +1,16 @@
-import React from "react";
+import { React, useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react"
-import styled from 'styled-components'
-import imagem from '../assets/basic-card-background4.png'
+import styled from 'styled-components';
 
-import { useContext } from "react";
+import imagem from '../assets/basic-card-background.png';
 import { ThemeContext } from "../contexts/themeContext";
+import GetPokemon from '../adapters/GetPokemon'
 
-async function CreatePokemon(id) {
-    const createListPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    const response = await createListPokemon.json()
-    return response
-}
+// async function GetPokemon(id) {
+//     const createListPokemon = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+//     const response = await createListPokemon.json()
+//     return response
+// }
 
 const PokemonDetails = (props) => {
 
@@ -82,7 +81,7 @@ const Pokemon = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const data = await CreatePokemon(id);
+            const data = await GetPokemon(id);
 
             const getPokemonDetails = {
                 name: data.name,
