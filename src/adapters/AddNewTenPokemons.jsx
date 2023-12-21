@@ -1,5 +1,6 @@
 export default async function AddNewTenPokemons (count) {
-    const newTenPokemons = await fetch(`https://pokeapi.co/api/v2/ability/?limit=${count}&offset=${count+10}.`)
+    const newTenPokemons = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=10&offset=${count}.`)
     const response = await newTenPokemons.json();
+    console.log(response);
     return response.results
 }

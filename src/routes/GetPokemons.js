@@ -5,6 +5,7 @@ import { ThemeContext } from "../contexts/themeContext"
 
 import CreateListPokemon from '../adapters/CreateListPokemon';
 import Form from "../forms/forms";
+import AddNewTenPokemons from '../adapters/AddNewTenPokemons'
 
 const Pokemons = (props) => {
     const { theme } = useContext(ThemeContext);
@@ -32,6 +33,8 @@ const Pokemons = (props) => {
     )
 }
 
+let count = 10;
+
 const GetPokemons = () => {
 
     const { theme } = useContext(ThemeContext)
@@ -40,7 +43,7 @@ const GetPokemons = () => {
         pokemon: []
     })
 
-    let count = 10;
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -84,9 +87,11 @@ const GetPokemons = () => {
             style={{ color: theme.color, backgroundColor: theme.background, transition: theme.transition }}
         >
             <Pokemons pokemons={pokemonList.pokemon} />
-            {/* <Button onClick={() => {
-                AddNewPokemons();
-            }}>Load more</Button> */}
+            <Button onClick={() => {
+                AddNewTenPokemons(count);
+                count += 10;
+                console.log(count);
+            }}>Load more</Button>
             <Form addPokemons={addPokemons}/>
         </Section>
     )
