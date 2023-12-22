@@ -4,8 +4,6 @@ import { Link } from "react-router-dom"
 import { ThemeContext } from "../contexts/themeContext"
 
 import CreateListPokemon from '../adapters/CreateListPokemon';
-import Form from "../forms/forms";
-import AddNewTenPokemons from '../adapters/AddNewTenPokemons'
 
 const Pokemons = (props) => {
     const { theme } = useContext(ThemeContext);
@@ -33,42 +31,34 @@ const Pokemons = (props) => {
     )
 }
 
-let count = 10;
-
 const GetPokemons = () => {
 
     const { theme } = useContext(ThemeContext)
 
     const [pokemonList, setPokemonList] = useState({
-        pokemon: [
-            {name: ''},
-            {id: ''},
-            {types: ''},
-            {abilities: ''},
-            {sprites: ''},
-            {moves: ''}
-        ]
+        pokemon: []
     })
 
-
+    const [count, setCount] = useState(10);
 
     useEffect(() => {
         const fetchData = async () => {
-            // const data = await CreateListPokemon(count);
-            const { id, types, abilities, sprites, moves } = await CreateListPokemon(count);
-            // const getAllPokemons = await Promise.all(
-            //     data.map(async pokemon => {
-            //         const { id, types, abilities, sprites, moves } = await getMoreInfos(pokemon.url)
-            
-            pokemonList.name = id
-            pokemonList.id = id
-            pokemonList.types = types
-            pokemonList.abilities = abilities
-            pokemonList.sprites = sprites
-            pokemonList.moves = moves
-            
+            const data = await CreateListPokemon(count)
+            const getAllPokemons = await Promise.all( data.map(async pokemon => {
+                
+                    const { id, types, abilities, sprites, moves } = await getMoreInfos(pokemon.url)
+                    return {
+                        name: pokemon.name,
+                        id,
+                        types,
+                        abilities,
+                        sprites,
+                        moves
+                    }
+                })
+            )
             setPokemonList({
-                pokemon: [...pokemonList.pokemon, getAllPokemons]
+                pokemon: getAllPokemons
             })
         }
         fetchData()
@@ -80,22 +70,19 @@ const GetPokemons = () => {
         return { id, types, abilities, sprites, moves };
     }
 
-    // const addPokemons = (newPokemons) => {
-    //     setPokemonList({
-    //         pokemon: [...pokemonList.pokemon, newPokemons]
-    //     })
-    // }
-
     return (
         <Section
             style={{ color: theme.color, backgroundColor: theme.background, transition: theme.transition }}
         >
             <Pokemons pokemons={pokemonList.pokemon} />
             <Button onClick={() => {
-                // AddNewTenPokemons(count);
-                count += 10;
+                if (count <= 1282) {
+                    setCount(count + 10)
+                }
+                else {
+                    setCount(1292)
+                }
             }}>Load more</Button>
-            {/* <Form addPokemons={addPokemons}/> */}
         </Section>
     )
 }

@@ -14,7 +14,6 @@ const Pokemons = (props) => {
                 {
                     props.pokemons.map((pokemon, index) => {
                         return (
-
                             <Li key={index}>
                                 <Link to={'/starter-project-outlet/' + pokemon.id}>
                                     <Div style={{ color: theme.color, backgroundColor: theme.backgroundColor, transition: theme.transition }}>
@@ -31,35 +30,42 @@ const Pokemons = (props) => {
     )
 }
 
+let arrayPokemons = [];
+
 const GetPokemons = () => {
 
     const { theme } = useContext(ThemeContext)
 
     const [pokemonList, setPokemonList] = useState({
-        pokemon: []
+        pokemon: arrayPokemons
     })
 
-    const [count, setCount] = useState(10);
+    const [count, setCount] = useState(0);
+
+    useEffect(()=>{
+        arrayPokemons = [];
+    },[])
 
     useEffect(() => {
         const fetchData = async () => {
             const data = await CreateListPokemon(count)
-            const getAllPokemons = await Promise.all( data.map(async pokemon => {
-                
-                    const { id, types, abilities, sprites, moves } = await getMoreInfos(pokemon.url)
-                    return {
-                        name: pokemon.name,
-                        id,
-                        types,
-                        abilities,
-                        sprites,
-                        moves
-                    }
-                })
+            const getAllPokemons = await Promise.all(data.map(async pokemon => {
+
+                const { id, types, abilities, sprites, moves } = await getMoreInfos(pokemon.url)
+                return {
+                    name: pokemon.name,
+                    id,
+                    types,
+                    abilities,
+                    sprites,
+                    moves
+                }
+            })
             )
             setPokemonList({
-                pokemon: getAllPokemons
+                pokemon: [...arrayPokemons, ...getAllPokemons]
             })
+            arrayPokemons = [...arrayPokemons, ...getAllPokemons]
         }
         fetchData()
     }, [count])
